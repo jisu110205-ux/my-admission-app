@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>🎉 나의 가상 합격증 만들기</h1>
-    <form action="http://localhost:3000/send" method="POST">
+    form action="https://my-admission-app.onrender.com/send" method="POST"
         <label>이름: <input type="text" name="name" required></label><br><br>
         <label>목표 대학: <input type="text" name="university" required></label><br><br>
         <label>받을 이메일: <input type="email" name="email" required></label><br><br>
