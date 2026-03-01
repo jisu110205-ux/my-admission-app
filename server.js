@@ -7,7 +7,10 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
-
+// index.html 파일을 첫 화면으로 보여주는 설정입니다.
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+});
 // 1. 주요 대학 로고 리스트 (직접 주소를 넣어두면 훨씬 정확합니다)
 const staticLogos = {
     "서울대학교": "https://www.snu.ac.kr/snunow/snu_media/symbol/ui/download/snu_logo.png",
