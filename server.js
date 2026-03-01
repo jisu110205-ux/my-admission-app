@@ -149,3 +149,9 @@ app.post('/send', async (req, res) => {
         res.send("<h1>전송 성공! Check your Email.</h1>");
     });
 });
+// Render 서버가 주는 포트 번호를 사용하거나, 없으면 10000번을 사용합니다.
+const PORT = process.env.PORT || 10000;
+
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`✅ 서버가 포트 ${PORT}에서 정상적으로 시작되었습니다!`);
+});
