@@ -151,6 +151,7 @@ app.post('/send', async (req, res) => {
 
     transporter.sendMail(mailOptions, (err) => {
         if (err) return res.status(500).send("실패");
+        console.error("❌ 메일 전송 에러 상세내용:", err); //
         res.send("<h1>전송 성공! Check your Email.</h1>");
     });
 });
