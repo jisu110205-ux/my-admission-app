@@ -94,7 +94,9 @@ app.post('/send', async (req, res) => {
     const { name, university, email } = req.body;
 
     // 1. 로고 결정
-    const finalLogo = staticLogos[university] || await getUniversityLogo(university);
+    // server.js 95번 줄 근처를 이렇게 수정해 보세요.
+    // const finalLogo = staticLogos[university] || await getUniversityLogo(university);
+    const finalLogo = "https://www.snu.ac.kr/snunow/snu_media/symbol/ui/download/snu_logo.png";
 
     // 2. 언어 판별 (대학 이름에 영문이 포함되어 있는지 확인)
     const isEnglish = /[a-zA-Z]/.test(university);
