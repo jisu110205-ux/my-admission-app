@@ -82,14 +82,16 @@ async function getUniversityLogo(univName) {
 }
 
 // 3. 메일 발송 로직
+
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: 'naver',
+    host: 'smtp.naver.com',
+    port: 587,
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
     }
 });
-
 app.post('/send', async (req, res) => {
     const { name, university, email } = req.body;
 
